@@ -4,8 +4,28 @@
 
 $path = $_SERVER['DOCUMENT_ROOT'];
 $includes = $path . "/includes/";
-
 ?>
+
+<?php include($includes . "localserver.php"); ?>  
+
+<?php try {
+    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+    // setting the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	echo "Connected successfully"; 
+	
+	$sql = "INSERT INTO $lowerdb (FirstName, LastName, Email, Attending, Bringing, Song)
+	 VALUES ('John', 'Doe', 'john@example.com', 'Yes', 'Yes', 'Take He Home Country Roads by John Denver')";
+
+	$conn->exec($sql);
+}
+catch(PDOException $e) {
+	echo "Connection failed: " . $e->getMessage();
+	echo "Error: " . $sql . "<br>" . $conn->e;
+}
+		
+$conn = null;?>
+
 <?php include($includes . "phptop.php"); ?>  
 <!DOCTYPE html>
 <html>
@@ -53,6 +73,7 @@ $includes = $path . "/includes/";
 					<label for="">Song suggestion for wedding playlist</label><input type="text">
 				</li>
 			</ul>
+			<input type="submit" value="Submit">
 		</form>
 
 	</section>

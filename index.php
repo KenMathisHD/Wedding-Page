@@ -19,12 +19,44 @@ $includes = $path . "/includes/";
 
 <body>
 
-	<?php include($includes . "navbar.php"); ?>  
-    <section>
+    <section class="homePage">
 		<div class="namesFixed">
 			<span>Ciara & Kenny</span>
 		</div>
-	</section>            
+		<?php include($includes . "navbar.php"); ?>  
+	</section>
+	
+	<section class="rsvp">
+
+		<form action="">
+			<ul>
+				<li>
+					<label for="">First Name</label><input type="text">
+				</li>
+				<li>
+					<label for="">Last Name</label><input type="text">
+				</li>
+				<li>
+					<label for="">Email</label><input type="text">
+				</li>
+				<li>
+					<span>Coming to the wedding?</span>
+					<label for="">Yes</label>
+					<input type="radio" name="coming">
+					<label for="">No</label>
+					<input type="radio" name="coming">
+				</li>
+				<li>
+					<label for="">Plus 1?</label><input type="checkbox">
+				</li>
+				<li>
+					<label for="">Song suggestion for wedding playlist</label><input type="text">
+				</li>
+			</ul>
+		</form>
+
+	</section>
+
     <footer></footer>
 
 

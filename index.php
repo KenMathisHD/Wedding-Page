@@ -8,23 +8,30 @@ $includes = $path . "/includes/";
 
 <?php include($includes . "localserver.php"); ?>  
 
-<?php try {
-    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
-    // setting the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	echo "Connected successfully"; 
+<?php 
+// try {
+//     $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+//     // setting the PDO error mode to exception
+//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// 	echo "Connected successfully"; 
 	
-	$sql = "INSERT INTO $lowerdb (FirstName, LastName, Email, Attending, Bringing, Song)
-	 VALUES ('John', 'Doe', 'john@example.com', 'Yes', 'Yes', 'Take He Home Country Roads by John Denver')";
+// 	$sql = "INSERT INTO $lowerdb (FirstName, LastName, Email, Attending, Bringing, Song)
+// 	 VALUES ('John', 'Doe', 'john@example.com', 'Yes', 'Yes', 'Take He Home Country Roads by John Denver')";
 
-	$conn->exec($sql);
-}
-catch(PDOException $e) {
-	echo "Connection failed: " . $e->getMessage();
-	echo "Error: " . $sql . "<br>" . $conn->e;
-}
+// 	$conn->exec($sql);
+// }
+// catch(PDOException $e) {
+// 	echo "Connection failed: " . $e->getMessage();
+// 	echo "Error: " . $sql . "<br>" . $conn->e;
+// }
 		
-$conn = null;?>
+// $conn = null;
+
+
+
+
+
+?>
 
 <?php include($includes . "phptop.php"); ?>  
 <!DOCTYPE html>
@@ -48,39 +55,44 @@ $conn = null;?>
 	
 	<section class="rsvp">
 
-		<form action="">
+		<form action="/includes/phptop.php" method="post">
 			<ul>
 				<li>
-					<label for="">First Name</label><input type="text">
+					<label for="first-name">First Name</label><input type="text" id="first-name" required>
 				</li>
 				<li>
-					<label for="">Last Name</label><input type="text">
+					<label for="last-name">Last Name</label><input type="text" id="last-name" required>
 				</li>
 				<li>
-					<label for="">Email</label><input type="text">
+					<label for="email">Email</label><input type="text" id="email" required>
+					<span>Your email is required so we can alert youin case we need to make changes to the schedule or plans</span>
 				</li>
 				<li>
 					<span>Coming to the wedding?</span>
-					<label for="">Yes</label>
-					<input type="radio" name="coming">
-					<label for="">No</label>
-					<input type="radio" name="coming">
+					<label for="yesA">Yes</label>
+					<input type="radio" id="yesA" name="coming" value="Yes" required>
+					<label for="noA">No</label>
+					<input type="radio" id="noA" name="coming" value="No">
 				</li>
 				<li>
-					<label for="">Plus 1?</label><input type="checkbox">
+					<span>Are you bringing a plus 1?</span>
+					<label for="yesB">Yes</label>
+					<input type="radio" id="yesB" name="bringing" value="Yes" required>
+					<label for="noB">No</label>
+					<input type="radio" id="noB" name="bringing" value="No">
 				</li>
 				<li>
-					<label for="">Song suggestion for wedding playlist</label><input type="text">
+					<label for="song">Song suggestion for wedding playlist</label><input type="text" id="song">
 				</li>
 			</ul>
-			<input type="submit" value="Submit">
+			<input type="submit" id="submit" value="Submit">
 		</form>
 
 	</section>
 
     <footer></footer>
 
-
+	<script src="/js/jquery.min.js"></script>
     <script src="/js/script.js"></script>
 </body>
 

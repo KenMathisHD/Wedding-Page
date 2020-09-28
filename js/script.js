@@ -1,4 +1,147 @@
 
+const submit = document.getElementById("submit");
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const email = document.getElementById("email");
+
+const yesA = document.getElementById("yesA");
+const noA = document.getElementById("noA");
+
+const yesB = document.getElementById("yesB");
+const noB = document.getElementById("noB");
+
+const song = document.getElementById("song");
+
+
+var errorCounter = 0;
+
+
+var rsvpObj = {};
+
+submit.addEventListener("click", function (e) {
+
+    e.stopPropagation();
+    // e.preventDefault();
+
+
+    rsvp = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+    };
+
+
+    if (yesA.checked) {
+        rsvp.attending = yesA.value;
+    }
+    else if (noA.checked) {
+        rsvp.attending = noA.value;
+    }
+
+
+    if (yesB.checked) {
+        rsvp.bringing = yesB.value;
+    }
+    else if (noB.checked) {
+        rsvp.bringing = noB.value;
+    }
+
+
+    if (song.value != "") {
+        rsvp.song = song.value;
+    }
+    else {
+        rsvp.song = "No song suggestion";
+    }
+
+    
+    sendData(rsvp);
+});
+
+
+
+
+function sendData(rsvpData) {
+    $.ajax({
+        url: 'index.php?action=sendData',
+        data: {
+            rsvpData: JSON.stringify(rsvpData),
+        },
+        success: function(result) {
+            try {
+                json = jQuery.parseJSON(result);
+            } catch (e) {
+                showError("Invalid JSON returned from server: " + result);
+                return;
+            }
+            if (json['success'] === 0) {
+                if (errorCounter >= 3) {
+                    showError("Please contact me at kenneth.mathis.simpson@gmail.com to submit your information. "+
+                    "If you could, please screenshot the below error and send it to me so I can work on fixing the issue."+
+                    json['errormsg']);
+                }
+                else {
+                    showError("An error occured when submitting your RSVP information. Please reload your browser and try again");
+                    console.log(json['errormsg']);
+                    errorCounter++;
+                    sendErrorData();
+                }
+            }
+        },
+        error: function() {
+            showError('Error Reaching index.php');
+        }
+    });
+}
+
+function sendErrorData() {
+    $.ajax({
+        url: 'index.php?action=sendErrorData',
+        data: {
+            errorCounter: errorCounter
+        },
+        success: function(result) {
+            try {
+                json = jQuery.parseJSON(result);
+            } catch (e) {
+                showError("Invalid JSON returned from server: " + result);
+                return;
+            }
+        },
+        error: function() {
+            showError('Error Reaching index.php');
+        }
+    });
+}
+
+
+function showError(message) {
+    alert("ERROR: " + message);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // $('input:radio[name="size"]').change(
 //     function(){

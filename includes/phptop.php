@@ -8,51 +8,74 @@ if (!isset($_GET['action'])) {							//if action variable doesn't exist
 }
 session_start();										//starts the php session, drops that cookie
 
-if ($_GET['action'] == 'addTopping') {					//if the action being used is addTopping
+if ($_GET['action'] == 'sendData') {					//if the action being used is sendData
 	$result = array();									//$result sets up an object called result, and creates a blank array within that result object
-	$result['errormsg'] = '';							//sets up result.errormsg and makes iot's value blank - nothing
+	$result['errormsg'] = 'No Error Detected';							//sets up result.errormsg and makes iot's value blank - nothing
 	$result['success'] = 0;								//sets up result.success and makes it's value 0, or false
 
 
-	if (isset($_GET['topping']) && !empty($_GET['topping'])) {						//if the superglobal variable 'topping' exists and is something other than null
-														//need to also check if topping has a value, i.e. is not empty
-		if (!isset($_SESSION['toppings'])) {			//if the superglobal session variable 'toppings' does not exist
-			$_SESSION['toppings'] = array();			//then we're going to create that variable and continue on
+	if (isset($_GET['rsvpData'])) {						//if the superglobal variable 'rsvpData' exists
+		
+		$rsvpData = json_decode($_GET['rsvpData']); 	//decodes the json to something php can read
+
+
+		//assigning values
+		$firstName = (string) $rsvpData->firstName;
+		$lastName = (string) $rsvpData->lastName;
+		$email = (string) $rsvpData->email;
+		$attending = (string) $rsvpData->attending;
+		$bringing = (string) $rsvpData->bringing;
+		$song = (string) $rsvpData->song;
+		
+
+		//sending the data
+		try {
+		    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);								// setting the PDO error mode to exception
+			
+			$sql = "INSERT INTO $lowerdb (FirstName, LastName, Email, Attending, Bringing, Song)
+			 VALUES ('$firstName', '$lastName', '$email', '$attending', '$bringing', '$song')";
+		
+			$conn->exec($sql);
 		}
-		$_SESSION['toppings'][] = $_GET['topping'];		//saying the array 'toppings' is equal to the array 
-		$result['success'] = 1;						//updating the value of result.success as 1 since topping exists
+		catch(PDOException $e) {
+			// echo "Connection failed: " . $e->getMessage();
+			// echo "Error: " . $sql . "<br>" . $conn->e;
+		}
+				
+		$conn = null;
+		$result['success'] = 1;
 
-
-
-	}						//else statement only works if topping variable (in this case, element) doesn't exist, need to add check to see if topping has value (i.e. is empty of not)
-	else {											//if topping didnt exist
-		$result['errormsg'] = 'No Topping Entered';		//we'd update result.errormsg with No Topping Entered
+	}						
+	else {											//if rsvpData didnt exist
+		$result['errormsg'] = 'Data was not sent or was sent unsuccessfully';		//we'll update result.errormsg
 	}
 
-	echo json_encode($result);							//basically returns result as json
+	echo json_encode($result);						//return result
 	exit;
 
 
 
-} else if ($_GET['action'] == 'getToppings') {			//else if we're grabbing the list of toppings (getToppings is called)
+} else if ($_GET['action'] == 'sendErrorData') {		//else if we're dealing with an error
 	$result = array();									//define result object, add blank array
-	$result['errormsg'] = '';							//add .errormsg to object, make it blank
-	$result['success'] = 1;								//add .success to object, make it 1 by default
-	$result['toppings'] = array();						//add .toppings to object, make it a blank array
+	$result['errormsg'] = 'No Error Detected';							//add .errormsg to object, make it blank
+	$result['success'] = 0;								//add .success to object, make it 0 by default
 
-	if (isset($_SESSION['toppings'])) {					//if the serssion variable toppings exists
-		$result['toppings'] = $_SESSION['toppings'];	//result.toppings is equal to the session variable toppings
-		$result['success'] = 1;							//update .success to 1
+	if (isset($_GET['errorCounter'])) {						//if the superglobal variable 'errorCounter' exists
+
+		if (!isset($_SESSION['errorCount'])) {			//if the superglobal session variable 'errorCount' does not exist
+			$_SESSION['errorCount'] = array();			//then we're going to create that variable and continue on
+		}
+		$_SESSION['errorCount'] = $_GET['errorCounter'];		//updating the session variable value to the pulled in value 
+		$result['success'] = 1;							//updating the value of result.success as 1 since topping exists
+
+
 	}
-	else {
-		$result['success'] = 0;
-		$result['errormsg'] = 'Toppings array does not exist for some reason';
+	else {											//if errorCounter didnt exist
+		$result['errormsg'] = 'Data was not sent or was sent unsuccessfully';		//we'd update result.errormsg
 	}
 	
-	echo json_encode($result);							//basically return the result
+	echo json_encode($result);							//return result
 	exit;
-
-
-
 
 }?>

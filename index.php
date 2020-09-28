@@ -55,7 +55,7 @@ $includes = $path . "/includes/";
 	
 	<section class="rsvp">
 
-		<form action="/includes/phptop.php" method="post">
+		<form>
 			<ul>
 				<li>
 					<label for="first-name">First Name</label><input type="text" id="first-name" required />

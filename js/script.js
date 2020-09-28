@@ -16,7 +16,15 @@ const song = document.getElementById("song");
 var errorCounter = 0;
 
 
-var rsvpObj = {};
+var rsvp = {};
+
+
+
+function valueChecker(passedObject) {
+    if (passedObject.firstName.value != '' && passedObject.lastName.value != '' && passedObject.email.value != '' && passedObject.attending.value != '' && passedObject.bringing.value != '') {
+        sendData(passedObject);
+    }
+}
 
 submit.addEventListener("click", function (e) {
 
@@ -25,6 +33,9 @@ submit.addEventListener("click", function (e) {
         firstName: firstName.value,
         lastName: lastName.value,
         email: email.value,
+        attending: '',
+        bringing: '',
+        song: ''
     };
 
 
@@ -52,7 +63,7 @@ submit.addEventListener("click", function (e) {
     }
 
     
-    sendData(rsvp);
+    valueChecker(rsvp);
 });
 
 

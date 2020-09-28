@@ -21,7 +21,11 @@ var rsvp = {};
 
 
 function valueChecker(passedObject) {
-    if (passedObject.firstName.value != '' && passedObject.lastName.value != '' && passedObject.email.value != '' && passedObject.attending.value != '' && passedObject.bringing.value != '') {
+    if (passedObject.firstName === "" || passedObject.lastName === "" || passedObject.email === "" || passedObject.attending === "" || passedObject.bringing === "") {
+        console.log("value checker says one or more fields are not filled");
+    }
+    else {
+        console.log("value checker says all fields are filled");
         sendData(passedObject);
     }
 }

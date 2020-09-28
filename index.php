@@ -58,34 +58,34 @@ $includes = $path . "/includes/";
 		<form action="/includes/phptop.php" method="post">
 			<ul>
 				<li>
-					<label for="first-name">First Name</label><input type="text" id="first-name" required>
+					<label for="first-name">First Name</label><input type="text" id="first-name" required />
 				</li>
 				<li>
-					<label for="last-name">Last Name</label><input type="text" id="last-name" required>
+					<label for="last-name">Last Name</label><input type="text" id="last-name" required />
 				</li>
 				<li>
-					<label for="email">Email</label><input type="text" id="email" required>
+					<label for="email">Email</label><input type="text" id="email" required />
 					<span>Your email is required so we can alert youin case we need to make changes to the schedule or plans</span>
 				</li>
 				<li>
 					<span>Coming to the wedding?</span>
 					<label for="yesA">Yes</label>
-					<input type="radio" id="yesA" name="coming" value="Yes" required>
+					<input type="radio" id="yesA" name="coming" value="Yes" required />
 					<label for="noA">No</label>
 					<input type="radio" id="noA" name="coming" value="No">
 				</li>
 				<li>
 					<span>Are you bringing a plus 1?</span>
 					<label for="yesB">Yes</label>
-					<input type="radio" id="yesB" name="bringing" value="Yes" required>
+					<input type="radio" id="yesB" name="bringing" value="Yes" required />
 					<label for="noB">No</label>
 					<input type="radio" id="noB" name="bringing" value="No">
 				</li>
 				<li>
-					<label for="song">Song suggestion for wedding playlist</label><input type="text" id="song">
+					<label for="song">Song suggestion for wedding playlist</label><input type="text" id="song" />
 				</li>
 			</ul>
-			<input type="submit" id="submit" value="Submit">
+			<input type="submit" id="submit" value="Submit" />
 		</form>
 
 	</section>

@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url(/imgs/engPhoto.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    font-size: 25px;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-display: swap;
+    text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
+}
+.ceremonyInfoCont {
+    max-width: 70%;
+    min-height: 80vh;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    h2, h3, span, a {
+        color: white;
+        text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 33px;
+        padding: 10px;
+        border-bottom: 4px solid white;
+    }
+    span {
+        font-size: 25px;
+        line-height: 1.8em;
+    }
+    b {
+        font-size: 1.2em;
+    }
+    .schedule {
+        >span {
+            font-size: 18px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+    
+            li {
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .links {
+        h3 {
+            border: none;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+    
+            li {
+                padding: 25px;
+                max-width: 150px;
+                border: 4px solid white;
+                border-right: none;
+                border-left: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

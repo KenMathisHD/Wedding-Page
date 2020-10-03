@@ -32,7 +32,6 @@ function valueChecker(passedObject) {
 
 submit.addEventListener("click", function (e) {
 
-
     rsvp = {
         firstName: firstName.value,
         lastName: lastName.value,
@@ -75,7 +74,7 @@ submit.addEventListener("click", function (e) {
 
 function sendData(rsvpData) {
     $.ajax({
-        url: 'index.php?action=sendData',
+        url: 'rsvpPage.php?action=sendData',
         data: {
             rsvpData: JSON.stringify(rsvpData),
         },
@@ -108,7 +107,7 @@ function sendData(rsvpData) {
 
 function sendErrorData() {
     $.ajax({
-        url: 'index.php?action=sendErrorData',
+        url: 'rsvpPage.php?action=sendErrorData',
         data: {
             errorCounter: errorCounter
         },

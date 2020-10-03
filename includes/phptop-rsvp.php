@@ -37,10 +37,11 @@ if ($_GET['action'] == 'sendData') {					//if the action being used is sendData
 			 VALUES ('$firstName', '$lastName', '$email', '$attending', '$bringing', '$song')";
 		
 			$conn->exec($sql);
+			// echo json_encode("Connection Successful");
 		}
 		catch(PDOException $e) {
-			// echo "Connection failed: " . $e->getMessage();
-			// echo "Error: " . $sql . "<br>" . $conn->e;
+			echo json_encode("Connection failed: " . $e->getMessage());
+			echo json_encode("Error: " . $sql . "<br>" . $conn->e);
 		}
 				
 		$conn = null;
@@ -78,4 +79,6 @@ if ($_GET['action'] == 'sendData') {					//if the action being used is sendData
 	echo json_encode($result);							//return result
 	exit;
 
-}?>
+}
+
+?>

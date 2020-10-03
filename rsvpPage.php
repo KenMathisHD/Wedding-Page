@@ -6,9 +6,11 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 $includes = $path . "/includes/";
 ?>
 
-<?php include($includes . "localserver.php"); ?>  
+<?php include($includes . "phptop-headers.php"); ?>  
 
-<?php include($includes . "phptop.php"); ?>  
+<?php include($includes . "liveweb.php"); ?>  
+
+<?php include($includes . "phptop-rsvp.php"); ?>  
 <!DOCTYPE html>
 <html>
 
@@ -21,41 +23,52 @@ $includes = $path . "/includes/";
 
 <body>
 
-    <?php include($includes . "navbar.php"); ?>  
+    <?php include($includes . "non-home-pagenav.php"); ?>   
 
 	<section class="rsvp">
 
+        <img src="/imgs/KCWB.png" alt="">
+
         <form>
             <ul>
+                <li id="name">
+                    <div>
+                        <label for="first-name">First Name*</label><input type="text" id="first-name" required />
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name*</label><input type="text" id="last-name" required />
+                    </div>
+                </li>
+                <!-- <li>
+                    <label for="last-name">Last Name*</label><input type="text" id="last-name" required />
+                </li> -->
                 <li>
-                    <label for="first-name">First Name</label><input type="text" id="first-name" required />
+                    <label for="email">Email*</label><input type="text" id="email" required />
+                    <!-- <span>Your email is required so we can alert youin case we need to make changes to the schedule or plans</span> -->
                 </li>
                 <li>
-                    <label for="last-name">Last Name</label><input type="text" id="last-name" required />
+                    <span>Coming to the wedding?*</span>
+                    <div class="radio">
+                        <input type="radio" id="yesA" name="coming" value="Yes" required />
+                        <label for="yesA" class="yes">Yes </label>
+                        <input type="radio" id="noA" name="coming" value="No">
+                        <label for="noA" class="no">No</label>
+                    </div>
                 </li>
                 <li>
-                    <label for="email">Email</label><input type="text" id="email" required />
-                    <span>Your email is required so we can alert youin case we need to make changes to the schedule or plans</span>
-                </li>
-                <li>
-                    <span>Coming to the wedding?</span>
-                    <label for="yesA">Yes</label>
-                    <input type="radio" id="yesA" name="coming" value="Yes" required />
-                    <label for="noA">No</label>
-                    <input type="radio" id="noA" name="coming" value="No">
-                </li>
-                <li>
-                    <span>Are you bringing a plus 1?</span>
-                    <label for="yesB">Yes</label>
-                    <input type="radio" id="yesB" name="bringing" value="Yes" required />
-                    <label for="noB">No</label>
-                    <input type="radio" id="noB" name="bringing" value="No">
+                    <span>Are you bringing a plus 1?*</span>
+                    <div class="radio">
+                        <input type="radio" id="yesB" name="bringing" value="Yes" required />
+                        <label for="yesB" class="yes">Yes </label>
+                        <input type="radio" id="noB" name="bringing" value="No">
+                        <label for="noB" class="no">No</label>
+                    </div>
                 </li>
                 <li>
                     <label for="song">Song suggestion for wedding playlist</label><input type="text" id="song" />
                 </li>
             </ul>
-            <input type="submit" id="submit" value="Submit" />
+            <input type="submit" id="submit" value="RSVP" />
         </form>
 
     </section>

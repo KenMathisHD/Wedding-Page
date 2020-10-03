@@ -6,9 +6,8 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 $includes = $path . "/includes/";
 ?>
 
-<?php include($includes . "localserver.php"); ?>  
+<?php include($includes . "phptop-headers.php"); ?>  
 
-<?php include($includes . "phptop.php"); ?>  
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +32,6 @@ $includes = $path . "/includes/";
     <footer></footer>
 
 	<script src="/js/jquery.min.js"></script>
-    <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -26,7 +26,8 @@ $includes = $path . "/includes/";
         <h2>Wedding/Ceremony Information</h2>
 
         <div>
-            <h3>Ceremony Location</h3>
+            <h3>Ceremony Location and Date</h3>
+            <span>Saturday, December 5th, 2020</span>
             <span>228 Jeff Vaughn, Blanco, TX 78606</span>
         </div>
 

@@ -12,7 +12,10 @@ $includes = $path . "/includes/";
 
 <section class="nav">
 	<div class="namesNav">
-		<span>Ciara & Kenny</span>
+		<div id="mobile-nav" class="nav-mobile-button">
+			<span id="swirls"></span>
+		</div>	
+	<span>Ciara & Kenny</span>
 	</div>
 	<?php include($includes . "navbar.php"); ?>  
 </section>

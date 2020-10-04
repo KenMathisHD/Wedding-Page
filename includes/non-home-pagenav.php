@@ -17,5 +17,6 @@ $includes = $path . "/includes/";
 		</div>	
 	<span>Ciara & Kenny</span>
 	</div>
-	<?php include($includes . "navbar.php"); ?>  
+	<?php include($includes . "navMobile.php"); ?>
+	<?php include($includes . "navDesk.php"); ?>  
 </section>

@@ -116,7 +116,10 @@ body {
     height: 100%;
     z-index: 10;
     padding-top: 65px;
-    background-color: white;
+    background-image: url(/imgs/nav-background.jpeg);
+    background-position: 85%;
+    background-size: cover;
+    background-repeat: no-repeat;
     transform: translateX(-100%);
     transition: 300ms ease-in-out;
     border: 2px solid yellow;

@@ -28,6 +28,23 @@
   padding: 25px 50px;
 }
 @media (min-width: 0px) and (max-width: 1199px) {
+  .nav {
+    display: block;
+  }
+  .namesNav {
+    padding: 25px 0;
+  }
+  .namesNav > span {
+    font-size: 40px;
+    letter-spacing: 8px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 3px 3px 2px #323232;
+    text-align: center;
+    background: radial-gradient(circle, rgba(50, 50, 50, 0.4) 0%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
+    border-radius: 50%;
+    padding: 25px 50px;
+  }
   .nav-mobile-button {
     justify-self: flex-start;
     display: flex;
@@ -35,8 +52,6 @@
     top: 0;
     left: 0;
     z-index: 12;
-    width: 50px;
-    height: 90px;
     cursor: pointer;
     color: white;
     border-style: none;
@@ -83,25 +98,6 @@
     background-color: black;
     border-radius: 2px;
   }
-  .swirly {
-    transform: rotate(990deg) !important;
-    transition: 300ms ease-in-out;
-  }
-  .swirly:before,
-  .swirly:after {
-    transform-origin: 1.71429px center !important;
-    top: 0!important;
-    width: 15px!important;
-    transition: 300ms ease-in-out;
-  }
-  .swirly:before {
-    transform: rotate3d(0, 0, 1, -40deg) !important;
-    transition: 300ms ease-in-out;
-  }
-  .swirly:after {
-    transform: rotate3d(0, 0, 1, 40deg) !important;
-    transition: 300ms ease-in-out;
-  }
   .bar {
     display: none;
   }
@@ -115,13 +111,12 @@
     width: 60%;
     height: 100vh;
     z-index: 10;
-    background-image: url(https://www.wallpapertip.com/wmimgs/14-144734_sunset-blur-wallpaper-hd.jpg);
-    background-position: 85%    ;
+    background-image: url(/imgs/nav-background.jpeg);
+    background-position: 85%;
     background-size: cover;
     background-repeat: no-repeat;
     transform: translateX(-100%);
     transition: 300ms ease-in-out;
-    overflow: scroll;
   }
   .mobile .navbar ul {
     max-height: 100%;
@@ -130,7 +125,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    overflow: scroll;
     border: 2px solid yellow;
   }
   .mobile .navbar ul li {
@@ -155,9 +149,80 @@
     transition: 300ms ease-in-out;
   }
 }
-@media (min-width: 0px) and (max-width: 1199px) and (min-width: 992px) {
+@media (min-width: 0px) and (max-width: 1199px) and (orientation: portrait) {
+  .nav-mobile-button {
+    height: 120px;
+    width: 90px;
+  }
+  .nav-mobile-button span {
+    width: 36px;
+    height: 6px;
+    border-radius: 2px;
+  }
+  .nav-mobile-button span:before,
+  .nav-mobile-button span:after {
+    transform-origin: 5px center;
+  }
+  .nav-mobile-button span:before {
+    top: -12px;
+    width: 36px;
+    height: 6px;
+    border-radius: 2px;
+  }
+  .nav-mobile-button span:after {
+    top: 12px;
+    width: 36px;
+    height: 6px;
+  }
   .mobile .navbar {
-    width: 38%;
+    width: 30%;
+  }
+  .swirly {
+    transform: rotate(990deg) !important;
+    transition: 300ms ease-in-out;
+  }
+  .swirly:before,
+  .swirly:after {
+    transform-origin: 1.71429px center !important;
+    top: 0!important;
+    width: 21.5px !important;
+    transition: 300ms ease-in-out;
+  }
+  .swirly:before {
+    transform: rotate3d(0, 0, 1, -40deg) !important;
+    transition: 300ms ease-in-out;
+  }
+  .swirly:after {
+    transform: rotate3d(0, 0, 1, 40deg) !important;
+    transition: 300ms ease-in-out;
+  }
+}
+@media (min-width: 0px) and (max-width: 1199px) and (orientation: landscape) {
+  .nav-mobile-button {
+    height: 90px;
+    width: 60px;
+  }
+  .mobile .navbar {
+    width: 35%;
+  }
+  .swirly {
+    transform: rotate(990deg) !important;
+    transition: 300ms ease-in-out;
+  }
+  .swirly:before,
+  .swirly:after {
+    transform-origin: 1.71429px center !important;
+    top: 0!important;
+    width: 15px!important;
+    transition: 300ms ease-in-out;
+  }
+  .swirly:before {
+    transform: rotate3d(0, 0, 1, -40deg) !important;
+    transition: 300ms ease-in-out;
+  }
+  .swirly:after {
+    transform: rotate3d(0, 0, 1, 40deg) !important;
+    transition: 300ms ease-in-out;
   }
 }
 @media (min-width: 1200px) {

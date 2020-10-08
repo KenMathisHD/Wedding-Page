@@ -78,8 +78,9 @@ and (max-width: 1199px) {
             height: 4px;
             background-color: black;
             transform: rotate(180deg);
-            border-radius: 2px;
-            transition: ease-in-out 500ms;
+            outline: 1px solid white;
+            border-radius: 5px;
+            transition: transform ease-in-out 500ms;
             &:before, &:after {
                 transform-origin: 1.71429px center;
             }
@@ -88,22 +89,24 @@ and (max-width: 1199px) {
                 position: absolute;
                 left: 0;
                 top: -8px;
-                transition: all ease 350ms;
+                transition: transform 300ms ease, width 300ms ease, top 300ms ease;
                 width: 24px;
                 height: 4px;
                 background-color: black;
-                border-radius: 2px;
+                outline: 1px solid white;
+                border-radius: 5px;
             }
             &:after {
                 content: "";
                 position: absolute;
                 left: 0;
                 top: 8px;
-                transition: all ease 350ms;
+                transition: transform 300ms ease, width 300ms ease, top 300ms ease;
                 width: 24px;
                 height: 4px;
                 background-color: black;
-                border-radius: 2px;
+                outline: 1px solid white;
+                border-radius: 5px;
             }
         }
     }
@@ -165,57 +168,18 @@ and (max-width: 1199px) {
     }
 
 
-
     @media (orientation: portrait) {
         .nav-mobile-button {
             height: 120px;
             width: 90px;
+            transform: scale(1.5);
 
-            span {
-                width: 36px;
-                height: 6px;
-                border-radius: 2px;
-
-                &:before, &:after {
-                    transform-origin: 5px center;
-                }
-                &:before {
-                    top: -12px;
-                    width: 36px;
-                    height: 6px;
-                    border-radius: 2px;
-                }
-                &:after {
-                    top: 12px;
-                    width: 36px;
-                    height: 6px;
-                }
-            }
         }
         .mobile {
             .navbar {
                 width: 30%;
             }
         }
-        .swirly {
-            transform: rotate(990deg) !important;
-            transition: 300ms ease-in-out;
-                &:before, &:after {
-                    transform-origin: 1.71429px center!important;
-                    top: 0!important;
-                    width: 21.5px!important;
-                    transition: 300ms ease-in-out;
-                }
-                &:before {
-                    transform: rotate3d(0,0,1,-40deg)!important;
-                    transition: 300ms ease-in-out;
-                }
-                &:after {
-                    transform: rotate3d(0,0,1,40deg)!important;
-                    transition: 300ms ease-in-out;
-                }
-        }
-        
     }
     @media (orientation: landscape) {
         .nav-mobile-button {
@@ -227,36 +191,28 @@ and (max-width: 1199px) {
                 width: 35%;
             }
         }
-        .swirly {
-            transform: rotate(990deg) !important;
-            transition: 300ms ease-in-out;
-                &:before, &:after {
-                    transform-origin: 1.71429px center!important;
-                    top: 0!important;
-                    width: 15px!important;
-                    transition: 300ms ease-in-out;
-                }
-                &:before {
-                    transform: rotate3d(0,0,1,-40deg)!important;
-                    transition: 300ms ease-in-out;
-                }
-                &:after {
-                    transform: rotate3d(0,0,1,40deg)!important;
-                    transition: 300ms ease-in-out;
-                }
-        }
-        @media (min-width: 500px) {
-            
-            
-        }
     }
 
 
-
-
-
-
-
+    .swirly {
+        transform: rotate(990deg) !important;
+        outline: 0px!important;
+        transition: 300ms ease-in-out;
+        
+        &:before, &:after {
+                transform-origin: 1.71429px center!important;
+                top: 0!important;
+                width: 15px!important;
+                outline: 0px!important;
+                transition: all 300ms ease-in-out;
+            }
+            &:before {
+                transform: rotate3d(0,0,1,-40deg)!important;
+            }
+            &:after {
+                transform: rotate3d(0,0,1,40deg)!important;
+            }
+    }
 
 }
 @media (min-width : 1200px) {

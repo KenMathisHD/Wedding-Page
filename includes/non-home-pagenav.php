@@ -11,10 +11,10 @@ $includes = $path . "/includes/";
 </head>
 
 <section class="nav">
-	<div class="namesNav">
-		<div id="mobile-nav" class="nav-mobile-button">
-			<span id="swirls"></span>
-		</div>	
+	<div id="mobile-nav" class="nav-mobile-button">
+		<span id="swirls"></span>
+	</div>
+	<div class="namesNav">	
 		<span>Ciara & Kenny</span>
 	</div>
 	<?php include($includes . "navMobile.php"); ?>

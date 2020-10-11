@@ -7,7 +7,7 @@
 }
 .namesNav {
     position: relative;
-    z-index: 11;
+    z-index: 9;
     width: 100%;
     padding: 25px 0;
     display: flex;
@@ -144,7 +144,7 @@ and (max-width: 1199px) {
                 li {
                     padding: 15px 25px;
                     width: 100%;
-                    border: 2px solid grey;
+                    border: 2px solid white;
                     border-top: none;
                     height: 15%;
         
@@ -156,7 +156,7 @@ and (max-width: 1199px) {
                         text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
                     }
                     &:nth-child(1) {
-                        border-top: 2px solid grey;
+                        border-top: 2px solid white;
                     }
                 }
 
@@ -178,7 +178,20 @@ and (max-width: 1199px) {
         }
         .mobile {
             .navbar {
-                width: 30%;
+                width: 40%;
+
+                ul {
+                    overflow: hidden;
+                    padding: 130px 25px 0;  
+                    li {
+                        padding: 50px;
+                        a {
+                            font-size: 1.8em;
+                            letter-spacing: 3px;
+                            font-weight: bolder;
+                        }
+                    }
+                }
             }
         }
     }
@@ -189,7 +202,35 @@ and (max-width: 1199px) {
         }
         .mobile {
             .navbar {
-                width: 35%;
+                width: 60%;
+
+                ul {
+                    li {
+                        a {
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+        @media (device-width: 653px) and (device-height: 280px) {
+            .nav-mobile-button {
+                height: 68px;
+                width: 60px;
+            }
+            .mobile {
+                .navbar {
+                    width: 40%;
+                    ul {
+                        padding: 68px 25px 0;
+                        li {
+                            padding: 12px 25px;
+                            a {
+                                font-size: 1.1em;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

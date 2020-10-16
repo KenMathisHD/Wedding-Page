@@ -32,8 +32,7 @@
     }
 }
 
-@media (min-width: 0px) 
-and (max-width: 1199px) {
+@media (max-width: 1199px) {
     .nav {
         display: block;
     }
@@ -41,7 +40,7 @@ and (max-width: 1199px) {
         padding: 25px 0;
     
         >span {
-            font-size: 40px;
+            font-size: 80px;
             letter-spacing: 8px;
             color: white;
             // color: rgba(225, 225, 225, 0.938);
@@ -224,9 +223,49 @@ and (max-width: 1199px) {
                     ul {
                         padding: 68px 25px 0;
                         li {
-                            padding: 12px 25px;
+                            padding: 10px 25px;
                             a {
                                 font-size: 1.1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (device-width: 812px) and (device-height: 375px) {
+            .nav-mobile-button {
+                height: 68px;
+                width: 60px;
+            }
+            .mobile {
+                .navbar {
+                    width: 40%;
+                    ul {
+                        padding: 68px 25px 0;
+                        li {
+                            padding: 13px 25px;
+                            a {
+                                font-size: 1.1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (min-width: 700px) and (min-height: 400px) {
+            .nav-mobile-button {
+                height: 100px;
+                width: 60px;
+            }
+            .mobile {
+                .navbar {
+                    width: 50%;
+    
+                    ul {
+                        li {
+                            padding: 14px 25px;
+                            a {
+                                font-size: 1.4em;
                             }
                         }
                     }
@@ -291,7 +330,7 @@ and (max-width: 1199px) {
         display: none;
     }
 }
-@media (min-width: 676px) {
+@media (min-device-width: 676px) {
     .namesNav {
         >span {
             font-size: 60px;

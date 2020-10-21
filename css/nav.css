@@ -144,7 +144,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid yellow;
   }
   .mobile .navbar ul li {
     padding: 15px 25px;
@@ -189,9 +188,10 @@ body {
 }
 @media (max-width: 1199px) and (orientation: portrait) {
   .nav-mobile-button {
-    height: 120px;
-    width: 90px;
-    transform: scale(1.5);
+    height: 60px;
+    width: 60px;
+    margin: 30px 20px;
+    transform: scale(2);
   }
   .mobile .navbar {
     width: 90%;

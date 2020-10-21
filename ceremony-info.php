@@ -64,7 +64,7 @@ $includes = $path . "/includes/";
 
         <div>
             <h3>Dress</h3>
-            <span>Honestly, it's pretty lax. Minimum would be dress like you would if you were going to a nice restaurant with your inlaws for the first time and you want to 
+            <span>Casual - It's pretty lax. Minimum would be dress like you would if you were going to a nice restaurant with your inlaws for the first time and you want to 
             make a good impression</span>
         </div>
 

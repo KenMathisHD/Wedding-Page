@@ -19,7 +19,30 @@ body {
 }
 
 
-
+@media all and (max-width: 1199px) {
+    #nav-cont {
+        position: fixed;
+        left: 0;
+        top: 75%;
+        width: 100%;
+        text-align: center;
+    }
+    .namesNav {
+        >span {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90vw !important;
+            font-size: 120px !important;
+            // height: 100vw !important;
+            border-radius: 0% !important;
+            padding: 5vw 50px !important;
+            margin-top: -20vw; 
+            background: radial-gradient(circle, rgba(50,50,50,0.6) 0%, rgba(50,50,50,0.3) 60%, rgba(50,50,50,0.1) 86%, rgba(50,50,50,0) 95%) !important;
+        }
+    }
+}
 @media all and (min-width: 1200px) {
     @keyframes fadeWrap {
         

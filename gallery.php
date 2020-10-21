@@ -22,8 +22,8 @@ $includes = $path . "/includes/";
 
 <body>
 
-    <?php include($includes . "non-home-pagenav.php"); ?>  
-
+    <?php include($includes . "non-home-pagenav.php"); ?>   
+    <div id="background"></div>
     <section id="photos" class="imgInit">
         <img src="/imgs/1x1.jpeg" altImgSrc="/imgs/320/JenZPhoto-1.jpeg" alt="">
         <img src="/imgs/1x1.jpeg" altImgSrc="/imgs/320/JenZPhoto-3.jpeg" alt="">

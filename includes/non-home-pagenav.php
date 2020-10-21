@@ -10,11 +10,11 @@ $includes = $path . "/includes/";
     <link rel="stylesheet" href="/css/nav.css">
 </head>
 
-<section class="nav">
+<section id="nav-cont" class="nav">
 	<div id="mobile-nav" class="nav-mobile-button">
 		<span id="swirls"></span>
 	</div>
-	<div class="namesNav">	
+	<div id="name-nav" class="namesNav">	
 		<span>Ciara & Kenny</span>
 	</div>
 	<?php include($includes . "navMobile.php"); ?>

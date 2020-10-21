@@ -8,6 +8,12 @@ $(document).ready(function () {
 $(window).scroll( function() {
     screen = whereIsScreen();
     lazyLoadImgs();
+    if (screen.top > 200) {
+        $("#background").addClass("darkBackground");
+    }
+    else {
+        $("#background").removeClass("darkBackground");
+    }
 });
 
 
@@ -17,6 +23,8 @@ function lazyLoadImgs() {
         if (screen.bottom >= (whereAmI(imgArr[i]).top - 100)) {
             if (imgArr[i].getAttribute("src") == "/imgs/1x1.jpeg") {
                 imgArr[i].src = imgArr[i].getAttribute("altImgSrc");
+                console.log("Just did ");
+                console.log(imgArr[i]);
             }
         }
     }

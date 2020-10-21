@@ -1,50 +1,74 @@
 body {
-  background-image: url(/imgs/background-wc.jpeg);
+  background-image: url(/imgs/engPhoto.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-#photos {
-  /* Prevent vertical gaps */
-  line-height: 0;
-  -webkit-column-count: 5;
-  -webkit-column-gap: 0px;
-  -moz-column-count: 5;
-  -moz-column-gap: 0px;
-  column-count: 5;
-  column-gap: 0px;
+.imgInit {
+  position: relative;
+  z-index: 4;
 }
-#photos img {
-  /* Just in case there are inline attributes */
-  width: 100% !important;
-  height: auto !important;
-}
-@media (max-width: 1200px) {
-  #photos {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
+@media (max-width: 1199px) and (orientation: portrait) {
+  .imgInit {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 5vh;
+    grid-auto-rows: min-content;
+    grid-row-gap: 2.5vh;
+    grid-column-gap: 1vw;
+    grid-template-columns: 80vw;
+  }
+  .imgInit img {
+    display: block;
+    border: 12px solid white;
+    width: 100%;
+    height: auto;
   }
 }
-@media (max-width: 1000px) {
-  #photos {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-  }
-}
-@media (max-width: 800px) {
-  #photos {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
+@media (max-width: 1199px) and (orientation: landscape) {
+  .imgInit {
+    display: block;
     column-count: 2;
+    column-width: 40%;
+    column-gap: 0px;
+    padding: 5%;
+    justify-content: center;
+  }
+  .imgInit img {
+    display: block;
+    border: 12px solid white;
+    width: 40vw;
+    height: auto;
+    margin: 0 auto;
   }
 }
-@media (max-width: 400px) {
-  #photos {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
+@media (min-width: 1200px) {
+  .imgInit {
+    position: relative;
+    width: 100%;
+    column-count: 4;
+    column-gap: 0px;
   }
+  .imgInit img {
+    display: block;
+    border: 6px solid white;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 150ms ease-in-out;
+  z-index: 3;
+}
+.darkBackground {
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 150ms ease-in-out;
 }

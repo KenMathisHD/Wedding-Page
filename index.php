@@ -20,16 +20,11 @@ $includes = $path . "/includes/";
 
 <body>
 
-	<div id="mobile-nav" class="nav-mobile-button">
-		<span id="swirls"></span>
-	</div>	
-    <section class="homePage">
-		<div class="namesFixed">
-			<span>Ciara & Kenny</span>
-		</div>
-		<?php include($includes . "navMobile.php"); ?>
-		<?php include($includes . "navDesk.php"); ?>  
-	</section>
+	<div class="fadeInWrap">
+
+		<?php include($includes . "non-home-pagenav.php"); ?>
+
+	</div>
 	
 	
 

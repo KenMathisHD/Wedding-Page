@@ -1,23 +1,9 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
 body {
   background-image: url(/imgs/engPhoto.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-size: 25px;
-  color: white;
-  font-family: 'Roboto Slab', serif;
-  font-display: swap;
-  text-shadow: 3px 3px 2px #323232;
 }
 .ceremonyInfoCont {
   max-width: 70%;
@@ -127,6 +113,58 @@ body {
   .ceremonyInfoCont div a,
   .ceremonyInfoCont div b {
     font-size: 40px;
+  }
+  .ceremonyInfoCont .schedule ul {
+    padding: 25px 0 10px;
+  }
+  .ceremonyInfoCont .schedule ul li {
+    padding: 15px 0;
+  }
+  .ceremonyInfoCont .schedule ul li span b {
+    font-size: 45px;
+  }
+  .ceremonyInfoCont .schedule ul li span i {
+    letter-spacing: 2.5px;
+  }
+  .ceremonyInfoCont .otherInfo span:nth-child(even) {
+    padding: 22.5px 0 12.5px;
+  }
+  .ceremonyInfoCont .otherInfo span b {
+    font-size: 45px;
+  }
+  .ceremonyInfoCont .links ul li:nth-child(0) {
+    order: 2;
+  }
+  .ceremonyInfoCont .links ul li:nth-child(4) {
+    order: 2;
+  }
+}
+@media all and (max-width: 1199px) and (orientation: portrait) and (device-height: 653px) and (device-width: 280px) {
+  .navHolder {
+    height: 60px;
+  }
+  .mobileNav {
+    padding: 80px 0 0 0;
+  }
+  .mobileNav li a {
+    font-size: 20px;
+    padding: 15px 60px 15px 10px;
+  }
+}
+@media all and (max-width: 1199px) and (orientation: landscape) {
+  .ceremonyInfoCont {
+    max-width: 80%;
+  }
+  .ceremonyInfoCont h2 {
+    font-size: 55px;
+  }
+  .ceremonyInfoCont h3 {
+    font-size: 40px;
+  }
+  .ceremonyInfoCont div span,
+  .ceremonyInfoCont div a,
+  .ceremonyInfoCont div b {
+    font-size: 35px;
   }
   .ceremonyInfoCont .schedule ul {
     padding: 25px 0 10px;

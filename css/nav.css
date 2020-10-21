@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  font-size: 25px;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  font-display: swap;
+  text-shadow: 3px 3px 2px #323232;
+}
 .nav {
   position: relative;
   width: 100%;
@@ -178,7 +194,7 @@
     transform: scale(1.5);
   }
   .mobile .navbar {
-    width: 40%;
+    width: 90%;
   }
   .mobile .navbar ul {
     overflow: hidden;
@@ -200,6 +216,21 @@
   }
   .mobile .navbar {
     width: 60%;
+  }
+  .mobile .navbar ul li a {
+    font-size: 1.4em;
+  }
+}
+@media (max-width: 1199px) and (orientation: landscape) and (min-device-width: 700px) and (min-device-height: 400px) {
+  .nav-mobile-button {
+    height: 100px;
+    width: 60px;
+  }
+  .mobile .navbar {
+    width: 50%;
+  }
+  .mobile .navbar ul li {
+    padding: 14px 25px;
   }
   .mobile .navbar ul li a {
     font-size: 1.4em;
@@ -241,21 +272,6 @@
     font-size: 1.1em;
   }
 }
-@media (max-width: 1199px) and (orientation: landscape) and (min-width: 700px) and (min-height: 400px) {
-  .nav-mobile-button {
-    height: 100px;
-    width: 60px;
-  }
-  .mobile .navbar {
-    width: 50%;
-  }
-  .mobile .navbar ul li {
-    padding: 14px 25px;
-  }
-  .mobile .navbar ul li a {
-    font-size: 1.4em;
-  }
-}
 @media (min-width: 1200px) {
   .bar {
     display: block;
@@ -284,6 +300,9 @@
     text-shadow: 3px 3px 2px #323232;
   }
   .mobile {
+    display: none;
+  }
+  .nav-mobile-button {
     display: none;
   }
 }

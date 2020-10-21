@@ -19,3 +19,4 @@ mobileNav.addEventListener("click", function () {
         swirls.classList.add("swirly");
     }
 });
+

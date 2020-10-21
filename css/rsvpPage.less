@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 html, body {
     height: 100%;
 }
@@ -12,12 +7,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
-    font-size: 25px;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-display: swap;
-    text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
 }
 
 .rsvp {
@@ -55,6 +44,7 @@ body {
                 input {
                     height: 30px;
                     font-size: 22px;
+                    text-align: center;
                 }
             }
         }
@@ -125,5 +115,58 @@ body {
         color: black;
         border-color: black;
         transition: 0ms;
+    }
+}
+
+
+@media all and (max-width: 1199px) {
+
+    .rsvp {
+        img {
+            width: 180px;
+            height: 180px;
+        }
+        form {
+            ul {
+                li {
+                    padding: 20px 0;
+                    input {
+                        height: 45px;
+                        font-size: 35px;
+                        padding: 5px;
+                        max-width: 80%;
+                    }
+                    label {
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+        #submit {
+            padding: 20px 55px;
+        }
+    }
+    @media (orientation: portrait) {
+        .rsvp {
+            label, input, span, a, #submit {
+                font-size: 50px;
+            }
+        }
+        @media (device-height: 653px) and (device-width: 280px) {
+            
+        }
+    }
+    @media (orientation: landscape) {
+        .rsvp {
+            label, input, span, a, #submit {
+                font-size: 35px;
+            }
+        }
+        @media (device-width: 653px) and (device-height: 280px) {
+            
+        }
+        @media (min-width: 700px) and (min-height: 400px) {
+            
+        }
     }
 }

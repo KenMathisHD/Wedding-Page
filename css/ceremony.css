@@ -8,7 +8,7 @@ body {
 .ceremonyInfoCont {
   max-width: 70%;
   min-height: 80vh;
-  margin: 100px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -17,10 +17,12 @@ body {
 .ceremonyInfoCont div {
   width: 100%;
   text-align: center;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.4) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
+}
+.ceremonyInfoCont div,
+.ceremonyInfoCont > h2 {
+  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.6) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
 }
 .ceremonyInfoCont h2,
 .ceremonyInfoCont h3,
@@ -33,7 +35,7 @@ body {
 .ceremonyInfoCont > h2 {
   width: 100%;
   padding: 20px 20px 0;
-  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.4) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
+  letter-spacing: 2.5px;
 }
 .ceremonyInfoCont h2 {
   font-size: 40px;
@@ -98,6 +100,12 @@ body {
   text-decoration: none;
   font-weight: bolder;
   border-bottom: 2px solid white;
+}
+@media all and (max-width: 1199px) {
+  .ceremonyInfoCont h2 {
+    letter-spacing: 5px;
+    font-weight: normal;
+  }
 }
 @media all and (max-width: 1199px) and (orientation: portrait) {
   .ceremonyInfoCont {

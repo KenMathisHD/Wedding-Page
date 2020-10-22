@@ -90,8 +90,8 @@ $includes = $path . "/includes/";
             <h3>Links</h3>
             <ul>
                 <li><a href="https://weather.com/weather/tenday/l/Blanco+TX?canonicalCityId=8d9bda9f3c9b51750f8cf5c1d739cb47f7b71e3269b41933dddac4359d6a3c48">Blanco, TX Forecast</a></li>
-                <li><a href="">Gift Registry</a></li>
-                <li><a href="">Directions to venue</a></li>
+                <li><a href="https://www.amazon.com/wedding/ciara-mccary-kenny-simpson-blanco-december-2020/registry/127IEC7EENQD6">Gift Registry</a></li>
+                <li><a href="https://www.google.com/maps/dir//228+Jeff+Vaughn,+Blanco,+TX+78606/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x865b7a3a8af72409:0xacedd790a32e5a7c?sa=X&ved=2ahUKEwjCm_mrhMfsAhURT6wKHZPLAHUQ9RcwDHoECBEQBQ">Directions to venue</a></li>
                 <li><a href="/contact-us.php">Contact Info</a></li>
                 <li><a href="rsvpPage.php">If you're coming, RSVP!</a></li>
             </ul>

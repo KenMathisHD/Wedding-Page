@@ -127,7 +127,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 95%;
     height: 100vh;
     z-index: 10;
     background-image: url(/imgs/nav-background.jpeg);
@@ -139,25 +139,37 @@ body {
   }
   .mobile .navbar ul {
     max-height: 100%;
-    padding: 90px 25px 0;
+    padding: 90px 0 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
   }
   .mobile .navbar ul li {
-    padding: 15px 25px;
     width: 100%;
     border: 2px solid white;
     border-top: none;
     height: 15%;
+    padding: 0;
+    list-style: none;
   }
   .mobile .navbar ul li a {
+    display: block;
     font-size: 1em;
     color: white;
     font-family: 'Roboto Slab', serif;
     text-decoration: none;
     text-shadow: 3px 3px 2px #323232;
+    background-color: rgba(186, 196, 44, 0);
+    max-width: 100%;
+    height: 100%;
+    padding: 15px 25px;
+    transition: 150ms ease-in-out;
+  }
+  .mobile .navbar ul li a:hover {
+    background-color: rgba(186, 196, 44, 0.5);
+    transition: 150ms ease-in-out;
   }
   .mobile .navbar ul li:nth-child(1) {
     border-top: 2px solid white;
@@ -167,7 +179,7 @@ body {
     transition: 300ms ease-in-out;
   }
   .swirly {
-    transform: rotate(990deg) !important;
+    transform: rotate(630deg) !important;
     outline: 0px!important;
     transition: 300ms ease-in-out;
   }
@@ -193,29 +205,21 @@ body {
     margin: 30px 20px;
     transform: scale(2);
   }
-  .mobile .navbar {
-    width: 90%;
-  }
   .mobile .navbar ul {
     overflow: hidden;
-    padding: 130px 25px 0;
-  }
-  .mobile .navbar ul li {
-    padding: 50px;
+    padding: 130px 0 0;
   }
   .mobile .navbar ul li a {
     font-size: 1.8em;
     letter-spacing: 3px;
     font-weight: bolder;
+    padding: 50px;
   }
 }
 @media (max-width: 1199px) and (orientation: landscape) {
   .nav-mobile-button {
     height: 90px;
     width: 60px;
-  }
-  .mobile .navbar {
-    width: 60%;
   }
   .mobile .navbar ul li a {
     font-size: 1.4em;
@@ -226,14 +230,9 @@ body {
     height: 100px;
     width: 60px;
   }
-  .mobile .navbar {
-    width: 50%;
-  }
-  .mobile .navbar ul li {
-    padding: 14px 25px;
-  }
   .mobile .navbar ul li a {
     font-size: 1.4em;
+    padding: 14px 25px;
   }
 }
 @media (max-width: 1199px) and (orientation: landscape) and (device-width: 653px) and (device-height: 280px) {
@@ -241,16 +240,11 @@ body {
     height: 68px;
     width: 60px;
   }
-  .mobile .navbar {
-    width: 40%;
-  }
   .mobile .navbar ul {
-    padding: 68px 25px 0;
-  }
-  .mobile .navbar ul li {
-    padding: 10px 25px;
+    padding: 68px 0 0;
   }
   .mobile .navbar ul li a {
+    padding: 10px 25px;
     font-size: 1.1em;
   }
 }
@@ -259,16 +253,11 @@ body {
     height: 68px;
     width: 60px;
   }
-  .mobile .navbar {
-    width: 40%;
-  }
   .mobile .navbar ul {
-    padding: 68px 25px 0;
-  }
-  .mobile .navbar ul li {
-    padding: 13px 25px;
+    padding: 68px 0 0;
   }
   .mobile .navbar ul li a {
+    padding: 13px 25px;
     font-size: 1.1em;
   }
 }
@@ -290,14 +279,21 @@ body {
   }
   .bar .navbar ul li {
     display: inline-block;
-    padding: 0 25px;
+    transform: scale(1);
+    transition: 200ms ease-in-out;
+  }
+  .bar .navbar ul li:hover {
+    transform: scale(1.2);
+    transition: 200ms ease-in-out;
   }
   .bar .navbar ul li a {
     font-size: 35px;
     color: white;
     font-family: 'Roboto Slab', serif;
+    padding: 0 25px;
     text-decoration: none;
     text-shadow: 3px 3px 2px #323232;
+    transition: 250ms ease-in-out;
   }
   .mobile {
     display: none;

@@ -46,6 +46,10 @@ body {
 .imgInit {
   position: relative;
   z-index: 4;
+
+  img {
+    cursor: pointer;
+  }
 }
 
   @media (max-width: 1199px) {
@@ -119,6 +123,20 @@ body {
       }
       .tallImg {
         grid-row-end: span 2;
+      }
+    }
+
+  }
+  @media (min-width: 1600px) {
+    .imgInit {
+      grid-column-gap: 18px;
+      grid-row-gap: 18px;
+      grid-template-columns: repeat(4, 375px);
+      grid-auto-rows: 275px;
+
+      img {
+        min-height: 255px;
+        max-height: 547.5px;
       }
     }
 

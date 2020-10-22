@@ -45,6 +45,7 @@ body {
         background: radial-gradient(circle, rgba(50,50,50,0.4) 0%, rgba(50,50,50,0.1) 86%, rgba(50,50,50,0) 100%);
         border-radius: 50%;
         padding: 25px 50px;
+        
     }
 }
 
@@ -68,6 +69,7 @@ body {
             background: radial-gradient(circle, rgba(50,50,50,0.4) 0%, rgba(50,50,50,0.1) 86%, rgba(50,50,50,0) 100%);
             border-radius: 50%;
             padding: 25px 50px;
+            
         }
     }
     .nav-mobile-button {
@@ -136,7 +138,7 @@ body {
             position: fixed;
             top: 0;
             left: 0;
-            width: 60%;
+            width: 95%;
             height: 100vh;
             z-index: 10;
             background-image: url(/imgs/nav-background.jpeg);
@@ -149,25 +151,38 @@ body {
         
             ul {
                 max-height: 100%;
-                padding: 90px 25px 0;
+                padding: 90px 0 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
+                overflow: hidden;
         
                 li {
-                    padding: 15px 25px;
                     width: 100%;
                     border: 2px solid white;
                     border-top: none;
                     height: 15%;
+                    padding: 0;
+                    list-style: none;
         
                     a {
+                        display: block;
                         font-size: 1em;
                         color: white;
                         font-family: 'Roboto Slab', serif;
                         text-decoration: none;
                         text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
+                        background-color: rgba(186, 196, 44, 0);
+                        max-width: 100%;
+                        height: 100%;
+                        padding: 15px 25px;
+                        transition: 150ms ease-in-out;
+
+                        &:hover {
+                            background-color: rgba(186, 196, 44, 0.5);
+                            transition: 150ms ease-in-out;
+                        }
                     }
                     &:nth-child(1) {
                         border-top: 2px solid white;
@@ -193,17 +208,16 @@ body {
         }
         .mobile {
             .navbar {
-                width: 90%;
-
                 ul {
                     overflow: hidden;
-                    padding: 130px 25px 0;  
+                    padding: 130px 0 0;  
                     li {
-                        padding: 50px;
+                        
                         a {
                             font-size: 1.8em;
                             letter-spacing: 3px;
                             font-weight: bolder;
+                            padding: 50px;
                         }
                     }
                 }
@@ -217,8 +231,6 @@ body {
         }
         .mobile {
             .navbar {
-                width: 60%;
-
                 ul {
                     li {
                         a {
@@ -235,13 +247,12 @@ body {
             }
             .mobile {
                 .navbar {
-                    width: 50%;
-    
                     ul {
                         li {
-                            padding: 14px 25px;
+                            
                             a {
                                 font-size: 1.4em;
+                                padding: 14px 25px;
                             }
                         }
                     }
@@ -255,12 +266,11 @@ body {
             }
             .mobile {
                 .navbar {
-                    width: 40%;
                     ul {
-                        padding: 68px 25px 0;
+                        padding: 68px 0 0;
                         li {
-                            padding: 10px 25px;
                             a {
+                                padding: 10px 25px;
                                 font-size: 1.1em;
                             }
                         }
@@ -275,12 +285,11 @@ body {
             }
             .mobile {
                 .navbar {
-                    width: 40%;
                     ul {
-                        padding: 68px 25px 0;
+                        padding: 68px 0 0;
                         li {
-                            padding: 13px 25px;
                             a {
+                                padding: 13px 25px;
                                 font-size: 1.1em;
                             }
                         }
@@ -292,7 +301,7 @@ body {
 
 
     .swirly {
-        transform: rotate(990deg) !important;
+        transform: rotate(630deg) !important;
         outline: 0px!important;
         transition: 300ms ease-in-out;
         
@@ -312,7 +321,7 @@ body {
     }
 
 }
-@media (min-width : 1200px) {
+@media (min-width: 1200px) {
     .bar {
         display: block;
         .navbar {
@@ -329,14 +338,22 @@ body {
         
                 li {
                     display: inline-block;
-                    padding: 0 25px;
-        
+                    transform: scale(1);
+                    transition: 200ms ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: 200ms ease-in-out;
+                    }
+
                     a {
                         font-size: 35px;
                         color: white;
                         font-family: 'Roboto Slab', serif;
+                        padding: 0 25px;
                         text-decoration: none;
                         text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
+                        transition: 250ms ease-in-out;
                     }
                 }
             }
@@ -348,6 +365,14 @@ body {
     .nav-mobile-button {
         display: none;
     }
+    // .namesNav {
+    //     span {
+    //         border: 3px solid white;
+    //         -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    //         -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    //         box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.75);
+    //     }
+    // }
 }
 @media (min-device-width: 676px) {
     .namesNav {

@@ -33,17 +33,17 @@ $includes = $path . "/includes/";
             <ul>
                 <li id="name">
                     <div>
-                        <label for="first-name">First Name*</label><input type="text" id="first-name" required />
+                        <label for="first-name">First Name*</label><input type="text" id="first-name" name="fname" placeholder="Skippy" required autocomplete="given-name"/>
                     </div>
                     <div>
-                        <label for="last-name">Last Name*</label><input type="text" id="last-name" required />
+                        <label for="last-name">Last Name*</label><input type="text" id="last-name" name="lname" placeholder="The Magnificent" required autocomplete="family-name"/>
                     </div>
                 </li>
                 <!-- <li>
                     <label for="last-name">Last Name*</label><input type="text" id="last-name" required />
                 </li> -->
                 <li>
-                    <label for="email">Email*</label><input type="text" id="email" required />
+                    <label for="email">Email*</label><input type="email" id="email" name="email" placeholder="name@example.com" required autocomplete="email"/>
                     <!-- <span>Your email is required so we can alert youin case we need to make changes to the schedule or plans</span> -->
                 </li>
                 <li>
@@ -65,7 +65,7 @@ $includes = $path . "/includes/";
                     </div>
                 </li>
                 <li>
-                    <label for="song">Song suggestion for wedding playlist</label><input type="text" id="song" />
+                    <label for="song">Song suggestion for wedding playlist</label><input type="text" id="song" placeholder="Cotton Eye Joe by Rednex"/>
                 </li>
             </ul>
             <input type="submit" id="submit" value="RSVP" />

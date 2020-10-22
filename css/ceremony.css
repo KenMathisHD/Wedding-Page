@@ -1,28 +1,14 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
 body {
   background-image: url(/imgs/engPhoto.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-size: 25px;
-  color: white;
-  font-family: 'Roboto Slab', serif;
-  font-display: swap;
-  text-shadow: 3px 3px 2px #323232;
 }
 .ceremonyInfoCont {
   max-width: 70%;
   min-height: 80vh;
-  margin: 100px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -31,10 +17,12 @@ body {
 .ceremonyInfoCont div {
   width: 100%;
   text-align: center;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.4) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
+}
+.ceremonyInfoCont div,
+.ceremonyInfoCont > h2 {
+  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.6) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
 }
 .ceremonyInfoCont h2,
 .ceremonyInfoCont h3,
@@ -47,7 +35,7 @@ body {
 .ceremonyInfoCont > h2 {
   width: 100%;
   padding: 20px 20px 0;
-  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.4) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
+  letter-spacing: 2.5px;
 }
 .ceremonyInfoCont h2 {
   font-size: 40px;
@@ -113,6 +101,12 @@ body {
   font-weight: bolder;
   border-bottom: 2px solid white;
 }
+@media all and (max-width: 1199px) {
+  .ceremonyInfoCont h2 {
+    letter-spacing: 5px;
+    font-weight: normal;
+  }
+}
 @media all and (max-width: 1199px) and (orientation: portrait) {
   .ceremonyInfoCont {
     max-width: 90%;
@@ -127,6 +121,58 @@ body {
   .ceremonyInfoCont div a,
   .ceremonyInfoCont div b {
     font-size: 40px;
+  }
+  .ceremonyInfoCont .schedule ul {
+    padding: 25px 0 10px;
+  }
+  .ceremonyInfoCont .schedule ul li {
+    padding: 15px 0;
+  }
+  .ceremonyInfoCont .schedule ul li span b {
+    font-size: 45px;
+  }
+  .ceremonyInfoCont .schedule ul li span i {
+    letter-spacing: 2.5px;
+  }
+  .ceremonyInfoCont .otherInfo span:nth-child(even) {
+    padding: 22.5px 0 12.5px;
+  }
+  .ceremonyInfoCont .otherInfo span b {
+    font-size: 45px;
+  }
+  .ceremonyInfoCont .links ul li:nth-child(0) {
+    order: 2;
+  }
+  .ceremonyInfoCont .links ul li:nth-child(4) {
+    order: 2;
+  }
+}
+@media all and (max-width: 1199px) and (orientation: portrait) and (device-height: 653px) and (device-width: 280px) {
+  .navHolder {
+    height: 60px;
+  }
+  .mobileNav {
+    padding: 80px 0 0 0;
+  }
+  .mobileNav li a {
+    font-size: 20px;
+    padding: 15px 60px 15px 10px;
+  }
+}
+@media all and (max-width: 1199px) and (orientation: landscape) {
+  .ceremonyInfoCont {
+    max-width: 80%;
+  }
+  .ceremonyInfoCont h2 {
+    font-size: 55px;
+  }
+  .ceremonyInfoCont h3 {
+    font-size: 40px;
+  }
+  .ceremonyInfoCont div span,
+  .ceremonyInfoCont div a,
+  .ceremonyInfoCont div b {
+    font-size: 35px;
   }
   .ceremonyInfoCont .schedule ul {
     padding: 25px 0 10px;

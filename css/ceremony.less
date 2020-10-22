@@ -1,29 +1,14 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-html {
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
 body {
     background-image: url(/imgs/engPhoto.jpeg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
-    font-size: 25px;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-display: swap;
-    text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
 }
 .ceremonyInfoCont {
     max-width: 70%;
     min-height: 80vh;
-    margin: 100px auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -32,10 +17,11 @@ body {
     div {
         width: 100%;
         text-align: center;
-        padding: 20px;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.4) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
+    }
+    div, >h2 {
+        background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.6) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
     }
     h2, h3, span, a {
         color: white;
@@ -45,8 +31,7 @@ body {
     >h2 {
         width: 100%;
         padding: 20px 20px 0;
-        background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, rgba(50, 50, 50, 0.4) 14%, rgba(50, 50, 50, 0.1) 86%, rgba(50, 50, 50, 0) 100%);
-
+        letter-spacing: 2.5px;
     }
     h2 {
         font-size: 40px;
@@ -127,6 +112,12 @@ body {
 }
 
 @media all and (max-width: 1199px) {
+    .ceremonyInfoCont {
+        h2 {
+            letter-spacing: 5px;
+            font-weight: normal;
+        }
+    }
 
     @media (orientation: portrait) {
         .ceremonyInfoCont {
@@ -182,14 +173,81 @@ body {
                 }
             }
         }
+        @media (device-height: 653px) and (device-width: 280px) {
+            .navHolder {
+                height: 60px;
+            }
+            .mobileNav {
+                padding: 80px 0 0 0;
+    
+                li {
+                    a {
+                        font-size: 20px;
+                        padding: 15px 60px 15px 10px;
+                    }
+                }
+            }
+        }
     }
     @media (orientation: landscape) {
-        
+        .ceremonyInfoCont {
+            max-width: 80%;
+            h2 {
+                font-size: 55px;
+            }
+            h3 {
+                font-size: 40px;
+            }
+            div {
+                span, a, b {
+                    font-size: 35px;
+                }
+            }
+            .schedule {
+                ul {
+                    padding: 25px 0 10px;
+                    li {
+                        padding: 15px 0;
+
+                        span {
+                            b {
+                                font-size: 45px;
+                            }
+                            i {
+                                letter-spacing: 2.5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .otherInfo {
+                span {
+                    &:nth-child(even) {
+                        padding: 22.5px 0 12.5px;
+                    }
+                    b {
+                        font-size: 45px;
+                    }
+                }
+            }
+            .links {
+                ul {
+                    li {
+                        &:nth-child(0) {
+                            order: 2;
+                        }
+                        &:nth-child(4) {
+                            order: 2;
+                        }
+                    }
+                }
+            }
+        }
         @media (device-width: 653px) and (device-height: 280px) {
             
         }
+        @media (min-width: 700px) and (min-height: 400px) {
+            
+        }
     }
-}
-@media (min-width: 1200px) {
-    
 }

@@ -1,50 +1,196 @@
 body {
-  background-image: url(/imgs/background-wc.jpeg);
+  background-image: url(/imgs/engPhoto.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-#photos {
-  /* Prevent vertical gaps */
-  line-height: 0;
-  -webkit-column-count: 5;
-  -webkit-column-gap: 0px;
-  -moz-column-count: 5;
-  -moz-column-gap: 0px;
-  column-count: 5;
-  column-gap: 0px;
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/materialicons/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(/materialicons/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff2) format('woff2'), url(/materialicons/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff) format('woff'), url(/materialicons/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
-#photos img {
-  /* Just in case there are inline attributes */
-  width: 100% !important;
-  height: auto !important;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
-@media (max-width: 1200px) {
-  #photos {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
+.imgInit {
+  position: relative;
+  z-index: 4;
+}
+.imgInit img {
+  cursor: pointer;
+}
+@media (max-width: 1199px) and (orientation: portrait) {
+  .imgInit {
+    width: 95%;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 5vh;
+    grid-auto-rows: min-content;
+    grid-row-gap: 2.5vh;
+    grid-column-gap: 1vw;
+    grid-template-columns: 80vw;
+    margin: 0 auto;
+  }
+  .imgInit img {
+    display: block;
+    border: 12px solid white;
+    width: 100%;
+    height: auto;
   }
 }
-@media (max-width: 1000px) {
-  #photos {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
+@media (max-width: 1199px) and (orientation: landscape) {
+  .imgInit {
+    position: relative;
+    width: 95%;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 5vh;
+    z-index: 4;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    grid-template-columns: repeat(2, 38vw);
+    grid-auto-rows: 27vw;
+    margin: 0 auto;
+  }
+  .imgInit img {
+    display: block;
+    outline: 6px solid white;
+    width: 100%;
+    min-height: 25.33vw;
+    max-height: 57vw;
+  }
+  .imgInit .tallImg {
+    grid-row-end: span 2;
   }
 }
-@media (max-width: 800px) {
-  #photos {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
+@media (min-width: 1200px) {
+  .imgInit {
+    position: relative;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding-bottom: 5vh;
+    z-index: 4;
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+    grid-template-columns: repeat(4, 270px);
+    grid-auto-rows: 202.5px;
+  }
+  .imgInit img {
+    display: block;
+    outline: 6px solid white;
+    width: 100%;
+    min-height: 184px;
+    max-height: 405px;
+  }
+  .imgInit .tallImg {
+    grid-row-end: span 2;
   }
 }
-@media (max-width: 400px) {
-  #photos {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
+@media (min-width: 1600px) {
+  .imgInit {
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+    grid-template-columns: repeat(4, 375px);
+    grid-auto-rows: 275px;
   }
+  .imgInit img {
+    min-height: 255px;
+    max-height: 547.5px;
+  }
+}
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 150ms ease-in-out;
+  z-index: -1;
+}
+.darkBackground {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  transition: 150ms ease-in-out;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.popup .imgWrap {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.popup .imgWrap img {
+  display: none;
+  max-width: 80vw;
+  max-height: 80vh;
+  border: 8px solid white;
+}
+.popup #exit-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border: 2px solid white;
+  cursor: pointer;
+  z-index: 25;
+}
+.popup #exit-button:before {
+  content: '\e14c';
+  font-family: 'Material Icons';
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+}
+.popupVis {
+  display: block;
+  z-index: 15;
+}
+.popupVis .imgWrap {
+  display: flex;
+}
+.popupVis .imgWrap img {
+  display: block;
+}
+.popupVis #exit-button {
+  display: flex;
 }

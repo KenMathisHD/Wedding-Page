@@ -19,7 +19,9 @@ $includes = $path . "/includes/";
 </head>
 
 <body>
-
+    <div class="backgroundWrap">
+    <img src="/imgs/engPhoto.jpeg" alt="">
+    </div>
     <?php include($includes . "non-home-pagenav.php"); ?>
 
     <section class="ceremonyInfoCont">

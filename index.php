@@ -20,6 +20,9 @@ $includes = $path . "/includes/";
 
 <body>
 
+	<div class="backgroundWrap">
+	<img src="/imgs/engPhoto.jpeg" alt="">
+	</div>
 	<div class="fadeInWrap">
 
 		<?php include($includes . "non-home-pagenav.php"); ?>

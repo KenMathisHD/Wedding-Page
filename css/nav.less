@@ -6,6 +6,7 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    width: 100%;
 }
 body {
     font-size: 25px;
@@ -13,6 +14,7 @@ body {
     font-family: 'Roboto Slab', serif;
     font-display: swap;
     text-shadow: 3px 3px 2px rgba(50, 50, 50, 1);
+    width: 100%;
 }
 .backgroundWrap {
     z-index: -1;
@@ -21,11 +23,6 @@ body {
     left: 0;
     height: 100vh;
     width: 100%;
-    // background-image: url(/imgs/engPhoto.jpeg);
-    // background-size: cover;
-    // background-position: center;
-    // background-attachment: fixed;
-    // background-repeat: no-repeat;
 
     img {
         // min-height: 100vh;
@@ -72,6 +69,12 @@ body {
 }
 
 @media (max-width: 1199px) {
+    body {
+        width: 100vw;
+    }
+    .backgroundWrap {
+        min-width: 100vw;
+    }
     .nav {
         display: block;
     }

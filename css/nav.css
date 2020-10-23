@@ -6,6 +6,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  width: 100%;
 }
 body {
   font-size: 25px;
@@ -13,6 +14,7 @@ body {
   font-family: 'Roboto Slab', serif;
   font-display: swap;
   text-shadow: 3px 3px 2px #323232;
+  width: 100%;
 }
 .backgroundWrap {
   z-index: -1;
@@ -58,6 +60,12 @@ body {
   padding: 25px 50px;
 }
 @media (max-width: 1199px) {
+  body {
+    width: 100vw;
+  }
+  .backgroundWrap {
+    min-width: 100vw;
+  }
   .nav {
     display: block;
   }

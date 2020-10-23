@@ -29,7 +29,7 @@ $includes = $path . "/includes/";
 
 	<section class="rsvp">
 
-        <img src="/imgs/KCWB.png" alt="">
+        <img src="/imgs/KCWB.png" alt="Our Brand/Seal">
 
         <form>
             <ul>
@@ -72,6 +72,13 @@ $includes = $path . "/includes/";
             </ul>
             <input type="submit" id="submit" value="RSVP" />
         </form>
+
+        <div id="thank-you-wrap">
+            <div id="thank-you">
+                <span>Thank you! We'll see you at the wedding!</span>
+                <img src="/imgs/KCWB.png" alt="Our Brand/Seal">
+            </div>
+        </div>
 
     </section>
 	

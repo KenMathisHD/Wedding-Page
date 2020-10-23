@@ -85,11 +85,12 @@ $includes = $path . "/includes/";
     </section>
     <div id="popup" class="popup">
         <div class="imgWrap">
-            <a href="/imgs/1x1.jpeg" id="download" download>
+            <a href="/imgs/1x1.jpeg" id="download-img" download>
                 <img id="img" src="/imgs/1x1.jpeg" alt="Popup Image">
             </a>
         </div>
         <div id="exit-button"></div>
+        <a id="download-button" download></a>
     </div>
 
 

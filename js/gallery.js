@@ -56,14 +56,16 @@ $(document).ready(function() {
         console.log($(this).attr('src'));
         $("#popup").addClass("popupVis");
         $("#img").attr('src', $(this).attr('fullImgSrc'));
-        $("#download").attr('href', $(this).attr('fullImgSrc'));
+        $("#download-img").attr('href', $(this).attr('fullImgSrc'));
+        $("#download-button").attr('href', $(this).attr('fullImgSrc'));
     });
   });
   
   exitButton.addEventListener("click", function () {
     $("#popup").removeClass("popupVis");
     $("#img").attr('src', "/img/1x1.jpeg");
-    $("#download").attr('href', "/img/1x1.jpeg");
+    $("#download-img").attr('href', "/img/1x1.jpeg");
+    $("#download-button").attr('href', "/img/1x1.jpeg");
     // Remove listener to re-enable scroll
     window.removeEventListener('scroll', noScroll);
 });

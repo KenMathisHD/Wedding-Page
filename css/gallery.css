@@ -36,10 +36,16 @@
 .imgInit img {
   cursor: pointer;
 }
+.popup .imgWrap #download-img {
+  text-decoration: none;
+}
+.popup .imgWrap #download-img img {
+  text-decoration: none;
+}
 .popup #exit-button {
   position: fixed;
-  top: 1vw;
-  right: 1vw;
+  top: 1.5vw;
+  right: 1.5vw;
   display: none;
   justify-content: center;
   align-items: center;
@@ -49,13 +55,38 @@
   border: 2px solid white;
   cursor: pointer;
   z-index: 25;
+  text-decoration: none;
 }
 .popup #exit-button:before {
   content: '\e14c';
   font-family: 'Material Icons';
   display: inline-block;
   color: white;
-  font-size: 2vw;
+  font-size: 3vw;
+  text-decoration: none;
+}
+.popup #download-button {
+  position: fixed;
+  bottom: 1.5vw;
+  right: 1.5vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 4vw;
+  height: 4vw;
+  background-color: black;
+  border: 2px solid white;
+  cursor: pointer;
+  z-index: 25;
+  text-decoration: none;
+}
+.popup #download-button:before {
+  content: '\e2c4';
+  font-family: 'Material Icons';
+  display: inline-block;
+  color: white;
+  font-size: 3vw;
+  text-decoration: none;
 }
 @media (max-width: 1199px) {
   .popup #exit-button {
@@ -74,6 +105,27 @@
   }
   .popup #exit-button:before {
     content: '\e14c';
+    font-family: 'Material Icons';
+    display: inline-block;
+    color: white;
+    font-size: 5vw;
+  }
+  .popup #download-button {
+    position: fixed;
+    bottom: 5vw;
+    right: 5vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 10vw;
+    background-color: black;
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 25;
+  }
+  .popup #download-button:before {
+    content: '\e2c4';
     font-family: 'Material Icons';
     display: inline-block;
     color: white;
@@ -208,5 +260,8 @@
   display: block;
 }
 .popupVis #exit-button {
+  display: flex;
+}
+.popupVis #download-button {
   display: flex;
 }

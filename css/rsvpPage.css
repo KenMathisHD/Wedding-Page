@@ -43,6 +43,61 @@ body {
   font-size: 22px;
   text-align: center;
 }
+.whomWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 0px;
+  padding: 0px;
+  line-height: 0px;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: 250ms ease-in-out;
+}
+.whomWrap > label {
+  opacity: 0;
+  text-align: center;
+  transition: 250ms ease-in-out;
+}
+.whomWrap input {
+  opacity: 0;
+  font-size: 0px;
+  transition: 250ms ease-in-out;
+}
+.whomWrap span {
+  opacity: 0;
+  text-align: center;
+  transition: 250ms ease-in-out;
+}
+.whomShow {
+  max-height: 200px;
+  padding: 10px;
+  line-height: 25px;
+  opacity: 1;
+  transition: 250ms ease-in-out;
+}
+.whomShow > label {
+  line-height: 25px;
+  padding: 10px;
+  opacity: 1;
+  transition: 250ms ease-in-out;
+}
+.whomShow input {
+  height: 30px;
+  font-size: 22px;
+  text-align: center;
+  opacity: 1;
+  transition: 250ms ease-in-out;
+}
+.whomShow span {
+  line-height: 25px;
+  padding: 10px;
+  opacity: 1;
+  transition: 250ms ease-in-out;
+}
 #name {
   flex-direction: row;
 }
@@ -53,6 +108,9 @@ body {
   align-items: center;
   padding: 0 15px;
 }
+#name div > label {
+  padding: 10px 0;
+}
 .radio {
   width: 100%;
   display: flex;
@@ -60,6 +118,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
 .radio input {
   position: fixed;
@@ -107,31 +168,31 @@ body {
   border-color: black;
   transition: 0ms;
 }
-#thank-you-wrap {
+.thankYouWrap {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(50, 50, 50, 0.8);
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 11;
+  display: none;
+  z-index: -1;
 }
-#thank-you-wrap #thank-you {
+.thankYouWrap #thank-you {
   width: 40vw;
   height: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px solid white;
+  border: 3px solid green;
   border-radius: 25px;
   background-color: rgba(97, 2, 26, 0.9);
 }
-#thank-you-wrap #thank-you span {
+.thankYouWrap #thank-you span {
   padding: 30px 50px;
   font-size: 2.5vw;
   line-height: 3.5vw;
@@ -139,9 +200,13 @@ body {
   color: white;
   letter-spacing: 2.5px;
 }
-#thank-you-wrap #thank-you img {
+.thankYouWrap #thank-you img {
   width: 7.5vw;
   height: auto;
+}
+.thankYouWrapShow {
+  display: flex;
+  z-index: 11;
 }
 @media all and (max-width: 1199px) {
   .rsvp img {
@@ -172,6 +237,33 @@ body {
   .rsvp #submit {
     font-size: 50px;
   }
+  .whomShow {
+    max-height: 400px;
+    line-height: 50px;
+  }
+  .whomShow > label {
+    line-height: 50px;
+  }
+  .whomShow input {
+    height: 45px;
+    font-size: 35px;
+    max-width: 80%;
+  }
+  .whomShow span {
+    line-height: 50px;
+  }
+  .thankYouWrap #thank-you {
+    width: 75vw;
+    height: 35vw;
+  }
+  .thankYouWrap #thank-you span {
+    padding: 3.5vw 50px;
+    font-size: 5vw;
+    line-height: 5.5vw;
+  }
+  .thankYouWrap #thank-you img {
+    width: 12.5vw;
+  }
 }
 @media all and (max-width: 1199px) and (orientation: landscape) {
   .rsvp label,
@@ -180,5 +272,20 @@ body {
   .rsvp a,
   .rsvp #submit {
     font-size: 35px;
+  }
+  .whomShow {
+    max-height: 400px;
+    line-height: 35px;
+  }
+  .whomShow > label {
+    line-height: 35px;
+  }
+  .whomShow input {
+    height: 45px;
+    font-size: 35px;
+    max-width: 80%;
+  }
+  .whomShow span {
+    line-height: 35px;
   }
 }

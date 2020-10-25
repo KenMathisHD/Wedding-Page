@@ -48,6 +48,63 @@ body {
         }
     }
 }
+.whomWrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 0px;
+    padding: 0px;
+    line-height: 0px;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    transition: 250ms ease-in-out;
+
+    >label {
+        opacity: 0;
+        text-align: center;
+        transition: 250ms ease-in-out;
+    }
+    input {
+        opacity: 0;
+        font-size: 0px;
+        transition: 250ms ease-in-out;
+    }
+    span {
+        opacity: 0;
+        text-align: center;
+        transition: 250ms ease-in-out;
+    }
+}
+.whomShow {
+    max-height: 200px;
+    padding: 10px;
+    line-height: 25px;
+    opacity: 1;
+    transition: 250ms ease-in-out;
+
+    >label {
+        line-height: 25px;
+        padding: 10px;
+        opacity: 1;
+        transition: 250ms ease-in-out;
+    }
+    input {
+        height: 30px;
+        font-size: 22px;
+        text-align: center;
+        opacity: 1;
+        transition: 250ms ease-in-out;
+    }
+    span {
+        line-height: 25px;
+        padding: 10px;
+        opacity: 1;
+        transition: 250ms ease-in-out;
+    }
+}
 #name {
     flex-direction: row;
 
@@ -57,6 +114,10 @@ body {
         justify-content: center;
         align-items: center;
         padding: 0 15px; 
+
+        >label {
+            padding: 10px 0;
+        }
     }
 }
 .radio {
@@ -66,6 +127,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
 
     input {
         position: fixed;
@@ -116,18 +180,21 @@ body {
     }
 }
 
-#thank-you-wrap {
+.thankYouWrap {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background-color: rgba(50, 50, 50, 0.8);
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 11;
+    display: none;
+    z-index: -1;
+
+
+
 
     #thank-you {
         width: 40vw;
@@ -136,7 +203,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 3px solid white;
+        border: 3px solid green;
         border-radius: 25px;
         background-color: rgba(97, 2, 26, 0.9);
 
@@ -153,6 +220,10 @@ body {
             height: auto;
         }
     }
+}
+.thankYouWrapShow {
+    display: flex;
+    z-index: 11;
 }
 
 
@@ -189,8 +260,36 @@ body {
                 font-size: 50px;
             }
         }
-        @media (device-height: 653px) and (device-width: 280px) {
-            
+        .whomShow {
+            max-height: 400px;
+            line-height: 50px;
+
+            >label {
+                line-height: 50px;
+            }
+            input {
+                height: 45px;
+                font-size: 35px;
+                max-width: 80%;
+            }
+            span {
+                line-height: 50px;
+            }
+        }
+        .thankYouWrap {     
+            #thank-you {
+                width: 75vw;
+                height: 35vw;
+        
+                span {
+                    padding: 3.5vw 50px;
+                    font-size: 5vw;
+                    line-height: 5.5vw;
+                }
+                img {
+                    width: 12.5vw;
+                }
+            }
         }
     }
     @media (orientation: landscape) {
@@ -199,11 +298,21 @@ body {
                 font-size: 35px;
             }
         }
-        @media (device-width: 653px) and (device-height: 280px) {
-            
-        }
-        @media (min-width: 700px) and (min-height: 400px) {
-            
+        .whomShow {
+            max-height: 400px;
+            line-height: 35px;
+
+            >label {
+                line-height: 35px;
+            }
+            input {
+                height: 45px;
+                font-size: 35px;
+                max-width: 80%;
+            }
+            span {
+                line-height: 35px;
+            }
         }
     }
 }

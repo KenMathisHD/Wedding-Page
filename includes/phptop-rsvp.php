@@ -25,7 +25,16 @@ if ($_GET['action'] == 'sendData') {					//if the action being used is sendData
 		$email = (string) $rsvpData->email;
 		$attending = (string) $rsvpData->attending;
 		$bringing = (string) $rsvpData->bringing;
+		$who = (string) $rsvpData->who;
 		$song = (string) $rsvpData->song;
+
+		$firstNameIn = addslashes($firstName);
+		$lastNameIn = addslashes($lastName);
+		$emailIn = addslashes($email);
+		$attendingIn = addslashes($attending);
+		$bringingIn = addslashes($bringing);
+		$whoIn = addslashes($who);
+		$songIn = addslashes($song);
 		
 
 		//sending the data
@@ -33,8 +42,8 @@ if ($_GET['action'] == 'sendData') {					//if the action being used is sendData
 		    $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);								// setting the PDO error mode to exception
 			
-			$sql = "INSERT INTO $lowerdb (FirstName, LastName, Email, Attending, Bringing, Song)
-			 VALUES ('$firstName', '$lastName', '$email', '$attending', '$bringing', '$song')";
+			$sql = "INSERT INTO $lowerdb (FirstName, LastName, Email, Attending, Bringing, Who, Song)
+			 VALUES ('$firstNameIn', '$lastNameIn', '$emailIn', '$attendingIn', '$bringingIn', '$whoIn', '$songIn')";
 		
 			$conn->exec($sql);
 			// echo json_encode("Connection Successful");

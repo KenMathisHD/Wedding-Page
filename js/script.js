@@ -10,6 +10,8 @@ const noA = document.getElementById("noA");
 const yesB = document.getElementById("yesB");
 const noB = document.getElementById("noB");
 
+const who = document.getElementById("who");
+
 const song = document.getElementById("song");
 
 
@@ -26,9 +28,18 @@ function valueChecker(passedObject) {
     }
     else {
         console.log("value checker says all fields are filled");
+        $("#thank-you-wrap").addClass("thankYouWrapShow");
+        setTimeout(function(){
+            // call the plugin here
+          },1000); // 1000ms = 1 second
         sendData(passedObject);
     }
 }
+$('#rsvp-form').submit(function(e){
+    e.preventDefault();
+    setTimeout(function(){window.location.reload(true);}, 3000);
+  });
+  
 
 submit.addEventListener("click", function (e) {
 
@@ -38,6 +49,7 @@ submit.addEventListener("click", function (e) {
         email: email.value,
         attending: '',
         bringing: '',
+        who: 'N/A',
         song: ''
     };
 
@@ -52,6 +64,7 @@ submit.addEventListener("click", function (e) {
 
     if (yesB.checked) {
         rsvp.bringing = yesB.value;
+        rsvp.who = who.value;
     }
     else if (noB.checked) {
         rsvp.bringing = noB.value;
@@ -70,6 +83,19 @@ submit.addEventListener("click", function (e) {
 });
 
 
+
+$("#yesB").change( function(){
+    if($(this).is(':checked')) {
+        $("#whom-wrap").addClass("whomShow");
+    }
+});
+
+
+$("#noB").change( function(){
+    if($(this).is(':checked')) {
+        $("#whom-wrap").removeClass("whomShow");
+    }
+});
 
 
 function sendData(rsvpData) {

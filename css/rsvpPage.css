@@ -252,6 +252,18 @@ body {
   .whomShow span {
     line-height: 50px;
   }
+  .thankYouWrap #thank-you {
+    width: 75vw;
+    height: 35vw;
+  }
+  .thankYouWrap #thank-you span {
+    padding: 3.5vw 50px;
+    font-size: 5vw;
+    line-height: 5.5vw;
+  }
+  .thankYouWrap #thank-you img {
+    width: 12.5vw;
+  }
 }
 @media all and (max-width: 1199px) and (orientation: landscape) {
   .rsvp label,
